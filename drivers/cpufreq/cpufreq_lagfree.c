@@ -37,7 +37,7 @@
 
 #define DEF_FREQUENCY_UP_THRESHOLD			(50)
 #define DEF_FREQUENCY_DOWN_THRESHOLD		(15)
-#define FREQ_STEP_DOWN 						(80000)
+#define FREQ_STEP_DOWN 						(160000)
 static unsigned int step_down;
 #define FREQ_SLEEP_MAX 						(320000)
 static unsigned int sleep_max;
@@ -404,11 +404,11 @@ static void dbs_check_cpu(int cpu)
 		this_dbs_info->requested_freq += freq_target;
 		if (this_dbs_info->requested_freq > policy->max)
 			this_dbs_info->requested_freq = policy->max;
-		
+
 		//Screen off mode
 		if (suspended && this_dbs_info->requested_freq > sleep_max)
 		    this_dbs_info->requested_freq = sleep_max;
-		    
+
 		//Screen off mode
 		if (!suspended && this_dbs_info->requested_freq < awake_min)
 		    this_dbs_info->requested_freq = awake_min;
@@ -463,14 +463,14 @@ static void dbs_check_cpu(int cpu)
 			this_dbs_info->requested_freq = policy->min;
 		else
 			this_dbs_info->requested_freq -= freq_target;
-		
+
 		if (this_dbs_info->requested_freq < policy->min)
 			this_dbs_info->requested_freq = policy->min;
-			
+
 		//Screen on mode
 		if (!suspended && this_dbs_info->requested_freq < awake_min)
 		    this_dbs_info->requested_freq = awake_min;
-		
+
 		//Screen off mode
 		if (suspended && this_dbs_info->requested_freq > sleep_max)
 		    this_dbs_info->requested_freq = sleep_max;
@@ -680,4 +680,4 @@ fs_initcall(cpufreq_gov_dbs_init);
 #else
 module_init(cpufreq_gov_dbs_init);
 #endif
-module_exit(cpufreq_gov_dbs_exit); 
+module_exit(cpufreq_gov_dbs_exit);

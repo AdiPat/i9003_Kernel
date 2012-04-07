@@ -355,12 +355,11 @@ static inline int lock_page_or_retry(struct page *page, struct mm_struct *mm,
 	might_sleep();
 	return trylock_page(page) || __lock_page_or_retry(page, mm, flags);
 }
-
-/*
 	
 /*
  * This is exported only for wait_on_page_locked/wait_on_page_writeback.
  * Never use this directly!
+ * @TitaniumS Kernel
  */
 extern void wait_on_page_bit(struct page *page, int bit_nr);
 

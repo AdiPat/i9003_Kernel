@@ -2726,3 +2726,6 @@ static int __init omap_voltage_init(void)
 	return 0;
 }
 device_initcall(omap_voltage_init);
+
+/*Overclocking i9003
+*/

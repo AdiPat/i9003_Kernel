@@ -481,10 +481,10 @@ void dpm_resume_noirq(pm_message_t state)
 
 	mutex_lock(&dpm_list_mtx);
 	transition_started = false;
-	while (!list_empty(&dpm_noirq_list)){
-	   struct device *dev = to_device(dpm_noirq_list.next);
+	while (!list_empty(&dpm_noirq_list)) {
+		struct device *dev = to_device(dpm_noirq_list.next);
 
-	   get_device(dev);
+		get_device(dev);
 		if (dev->power.status > DPM_OFF) {
 			int error;
 
@@ -493,10 +493,10 @@ void dpm_resume_noirq(pm_message_t state)
 			if (error)
 				pm_dev_err(dev, state, " early", error);
 		}
-	        if (!list_empty(&dev->power.entry))
-		   list_move_tail(&dev->power.entry, &dpm_suspended_list);
+		if (!list_empty(&dev->power.entry))
+			list_move_tail(&dev->power.entry, &dpm_suspended_list);
 		put_device(dev);
-		}
+	}
 	mutex_unlock(&dpm_list_mtx);
 	dpm_show_time(starttime, state, "early");
 	resume_device_irqs();
@@ -836,11 +836,11 @@ int dpm_suspend_noirq(pm_message_t state)
 
 	suspend_device_irqs();
 	mutex_lock(&dpm_list_mtx);
-	while (!list_empry(&dpm_suspended_list)) {
-	  struct device *dev = to_device(dpm_suspended_list.prev);
+	while (!list_empty(&dpm_suspended_list)) {
+		struct device *dev = to_device(dpm_suspended_list.prev);
 
-	  get device(dev);
-	  mutex_unlock(&dpm_list_mtx);
+		get_device(dev);
+		mutex_unlock(&dpm_list_mtx);
 
 		error = device_suspend_noirq(dev, state);
 		if (error) {
@@ -849,7 +849,7 @@ int dpm_suspend_noirq(pm_message_t state)
 		}
 		dev->power.status = DPM_OFF_IRQ;
 		if (!list_empty(&dev->power.entry))
-		  list_move(&dev->power.entry, &dpm_noirq_list);
+			list_move(&dev->power.entry, &dpm_noirq_list);
 		put_device(dev);
 	}
 	mutex_unlock(&dpm_list_mtx);

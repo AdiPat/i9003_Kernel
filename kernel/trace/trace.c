@@ -2382,11 +2382,20 @@ tracing_write_stub(struct file *filp, const char __user *ubuf,
 	return count;
 }
 
+static loff_t tracing_seek(struct file *file, loff_t offset, int origin)
+{
+	return seq_lseek(file, offset, origin);
+      else 
+	return 0;
+}
+
+
+
 static const struct file_operations tracing_fops = {
 	.open		= tracing_open,
 	.read		= seq_read,
 	.write		= tracing_write_stub,
-	.llseek		= seq_lseek,
+	.llseek		= tracing_lseek,
 	.release	= tracing_release,
 };
 

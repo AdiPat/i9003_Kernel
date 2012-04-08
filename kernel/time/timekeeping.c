@@ -37,6 +37,8 @@ struct timekeeper {
 
 	/* Clock shifted nano seconds remainder not stored in xtime.tv_nsec. */
 	u64	xtime_nsec;
+	/* Shifted nano seconds left over when rounding cycle interval */
+	s64  xtime_remainder;
 	/* Difference between accumulated time and NTP time in ntp
 	 * shifted nano seconds. */
 	s64	ntp_error;

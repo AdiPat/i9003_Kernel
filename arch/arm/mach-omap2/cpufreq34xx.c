@@ -95,6 +95,8 @@ static struct omap_opp_def __initdata omap36xx_opp_def_list[] = {
 	#else
 	OMAP_OPP_DEF("mpu", false,  1200000000, 1400000),
 	#endif
+	/* MPU OPP6 */
+	OMAP_OPP_DEF("mpu", true,  1300000000, 1430000),
 
 	/* L3 OPP1 - OPP50 */
 	OMAP_OPP_DEF("l3_main", false, 100000000, 930000),     
@@ -115,6 +117,8 @@ static struct omap_opp_def __initdata omap36xx_opp_def_list[] = {
 	#else
 	OMAP_OPP_DEF("iva", false, 840000000, 1400000),
 	#endif
+	/* DSP OPP6 */
+	OMAP_OPP_DEF("iva", true, 840000000, 1430000),
 };
 static u32 omap36xx_opp_def_size = ARRAY_SIZE(omap36xx_opp_def_list);
 

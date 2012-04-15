@@ -1,10 +1,18 @@
-|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TITANIUM S ~~~ CUSTOM KERNEL~~~~~~~~~~~~~~~~i9003~~~~~~~~~~~~~~~~~~~~~~~~~|
+*******************************************************
 
-GT-i9003 Kernel.
-OMAP 3630.
-Based on HK GB Sources.
+TitaniumS Custom Kernel for i9003.
 
-Modified by Adi_Pat(Aditya Patange) for i9003, TitaniumS Custom Kernel.
+Modified my Aditya Patange(Adi_Pat).
+
+For more info, Please see
+
+-> forum.xda-developers.com/showthread.php?t=1596145
+
+-> http://forum.xda-developers.com/showthread.php?p=24790378#post24790378
 
 
-XDA thread coming up soon !
+PS: If you are going to build your own kernel from my sources,
+    please send me a PM and inform me about it.
+
+
+Cheers! 

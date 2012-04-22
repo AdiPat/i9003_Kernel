@@ -40,7 +40,7 @@ echo "||~~~~~~~~~~~~~~~~~~~~~Current version copied~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 echo "||                                                                          ||"
 echo "||~~~~~~~~~~~~~~~~~~~~~~Now building kernel~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||"
 echo "||                                                                          ||"
-make -j2
+make -j100
 echo "||~~~~~~~~~~~~~~~~~~~~~~~~~zImage Compiled~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||"
 echo -e "\033[1m||                                                                          ||"
 ./copy_strip.sh
@@ -51,7 +51,7 @@ echo -e "\033[0m||                                                              
 echo "||--------------------------------------------------------------------------||"
 cp -f /home/aditya/i9003/i9003_Kernel/arch/arm/boot/zImage
 cp -f /home/aditya/i9003/i9003_Kernel/arch/arm/boot/zImage /home/aditya/i9003/urt/kernel/zImage
-cd /home/aditya/i9003/urt/
+cd i9003/i9003_Kernel
 ./create_boot.img.sh
 echo -e "\033[1m||                                                                          ||"
 echo "||~~~~~~~~~~~~~~~~~~~~~~Kernel/Ramdisk ready!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||"

@@ -1,5 +1,5 @@
 #Copy Modules to Modules directory and strip
-echo "||~~~~~~~~~~~~~~~~Copying modules to Module directory~~~~~~~~~~~~~~~~~~~~~~~||"
+echo "Copying modules to Modules directory"
 cp /home/aditya/i9003/i9003_Kernel/crypto/pcbc.ko /home/aditya/i9003/Modules/  
 
 cp /home/aditya/i9003/i9003_Kernel/drivers/misc/ti-st/st_drv.ko /home/aditya/i9003/Modules/ 
@@ -25,7 +25,7 @@ cp /home/aditya/i9003/i9003_Kernel/samsung/gp2a/gp2a.ko /home/aditya/i9003/Modul
 cp /home/aditya/i9003/i9003_Kernel/samsung/orientation/yas_ori_kernel_driver.ko /home/aditya/i9003/Modules/  
 
 cp /home/aditya/i9003/i9003_Kernel/samsung/gps/gps.ko /home/aditya/i9003/Modules/  
-echo "||~~~~~~~~~~Modules copied to /Modules, Now stripping them~~~~~~~~~~~~~~~~~~||"
+echo "Modules copied, Stripping Em :D"
 
 cd /home/aditya/i9003/Modules/
 
@@ -35,11 +35,11 @@ do
 /home/aditya/Toolchain/arm-2009q3/bin/arm-none-eabi-strip --strip-unneeded $i
 done
 
-echo "||~~~~~~~~~~~~~~~~~~~~~~~Stripped Modules~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||"
+echo "Modules Stripped!"
 
 #Copy modules to Ramdisk.
 
-echo "||~~~~~~~~~~~~~Copying all stripped modules to ramdisk.~~~~~~~~~~~~~~~~~~~~~||"
+echo "Copying Modules to ramdisk.."
 
 cd /home/aditya/i9003/Modules/
 
@@ -68,7 +68,7 @@ cp gp2a.ko /home/aditya/i9003/urt/ramdisk/lib/modules/2.6.35.7/kernel/samsung/gp
 cp yas_ori_kernel_driver.ko /home/aditya/i9003/urt/ramdisk/lib/modules/2.6.35.7/kernel/samsung/orientation/yas_ori_kernel_driver.ko
 
 cp gps.ko /home/aditya/i9003/urt/ramdisk/lib/modules/2.6.35.7/kernel/samsung/gps/gps.ko
-echo "||~~~~~~~~~~~~~~~~~~~~Modules copied to ramdisk~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||"
-echo "||~~~~~~~~~~~~~~~~~~~~~~~~~Ramdisk ready!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||"
+echo "Modules Copied to ramdisk"
+echo "Ramdisk is ready!"
 
 

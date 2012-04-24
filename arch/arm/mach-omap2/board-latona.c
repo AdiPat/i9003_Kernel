@@ -451,19 +451,7 @@ static struct opp_frequencies opp_freq_add_table[] __initdata = {
 	.ena = OMAP3630_CONTROL_FUSE_OPP1_2G_VDD1,
   },
   #endif
-  #ifdef CONFIG_SAMSUNG_LATONA_OPP67_ENABLED
-  {
-	.mpu = 1300000000,                             /* OPP6 */
-	.iva =  900000000,
-	.ena = OMAP3630_CONTROL_FUSE_OPP1_2G_VDD1,
-  },
-  {                                                    /* OPP7 */
-	.mpu = 1350000000,
-	.iva =  900000000,
-	.ena = OMAP3630_CONTROL_FUSE_OPP1_2G_VDD1,
-  },
-  #endif
-  { 0, 0, 0, 0, 0, },
+  { 0, 0, 0, },
 };
 
 static void __init omap_board_init(void)

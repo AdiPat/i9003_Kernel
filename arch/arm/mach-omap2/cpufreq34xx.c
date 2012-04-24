@@ -119,10 +119,15 @@ static struct omap_opp_def __initdata omap36xx_opp_def_list[] = {
 	#else
 	OMAP_OPP_DEF("iva", false, 860000000, 1400000),
 	#endif
+	#ifdef CONFIG_SAMSUNG_LATONA_OPP67_ENABLED
 	/* DSP OPP6 */
 	OMAP_OPP_DEF("iva", true, 900000000, 1430000),
 	/* DSP OPP7 */
 	OMAP_OPP_DEF("iva", true, 900000000, 1450000),
+	#else
+	OMAP_OPP_DEF("iva", false, 900000000, 1430000),
+	OMAP_OPP_DEF("iva", false, 900000000, 1450000),
+	#endif 
 };
 static u32 omap36xx_opp_def_size = ARRAY_SIZE(omap36xx_opp_def_list);
 

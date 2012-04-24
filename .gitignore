@@ -9,6 +9,7 @@
 #
 # Normal rules
 #
+cleaner.sh
 .*
 *.o
 *.o.*

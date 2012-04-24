@@ -51,7 +51,7 @@ echo -e "\033[0m||                                                              
 echo "||--------------------------------------------------------------------------||"
 cp -f /home/aditya/i9003/i9003_Kernel/arch/arm/boot/zImage
 cp -f /home/aditya/i9003/i9003_Kernel/arch/arm/boot/zImage /home/aditya/i9003/urt/kernel/zImage
-cd i9003/i9003_Kernel
+cd /home/aditya/i9003/urt/
 ./create_boot.img.sh
 echo -e "\033[1m||                                                                          ||"
 echo "||~~~~~~~~~~~~~~~~~~~~~~Kernel/Ramdisk ready!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||"

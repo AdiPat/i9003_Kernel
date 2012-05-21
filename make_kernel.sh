@@ -13,9 +13,7 @@ read vr;
 echo "$vr" > CURRENT_VERSION
 echo "Copying kernel version into the source"
 cp CURRENT_VERSION .version
-echo "Make j?"
-read x;
-make -j$x
+make -j84
 echo "Initiating Module copy/strip script"
 ./copy_strip.sh
 echo "Removing present zImage in Kernel Packing Folder"
